@@ -1,0 +1,34 @@
+{
+  "name": "restful-web-api-design-with-node.js-12",
+  "version": "1.0.0",
+  "description": "Packt course on RESTful Web API Design with Node.js 12",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PacktPublishing/-RESTful-Web-API-Design-with-Node.js-12.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "design",
+    "node"
+  ],
+  "author": "Florian GOTO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PacktPublishing/-RESTful-Web-API-Design-with-Node.js-12/issues"
+  },
+  "homepage": "https://github.com/PacktPublishing/-RESTful-Web-API-Design-with-Node.js-12#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "helmet": "^3.21.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1"
+  }
+}
