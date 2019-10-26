@@ -1,9 +1,9 @@
-const helmet = require("helmet");
-const cors = require("cors");
-const express = require("express");
-const basicAuth = require("express-basic-auth");
+import helmet from "helmet";
+import cors from "cors";
+import express from "express";
+import basicAuth from "express-basic-auth";
 
-module.exports = server => {
+export default server => {
   // apply CORS
   server.use(cors());
   // apply HTTP security headers

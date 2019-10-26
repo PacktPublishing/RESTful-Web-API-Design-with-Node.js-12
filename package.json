@@ -24,6 +24,7 @@
   "homepage": "https://github.com/PacktPublishing/-RESTful-Web-API-Design-with-Node.js-12#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
     "helmet": "^3.21.2"
