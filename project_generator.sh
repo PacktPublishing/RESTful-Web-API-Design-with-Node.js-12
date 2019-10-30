@@ -21,6 +21,8 @@ do
 		*"scripts"*) ;;
 		# ignore env folder
 		*"env"*) ;;
+		# ignore test folder
+		*"test"*) ;;
 		# default case
 		*) touch $folder/index.js
 			echo "adding index.js to $folder"
@@ -30,7 +32,28 @@ done
 
 # create server entry point
 
-touch server.js
+echo 'import express from "express";
+const server = express();
+const PORT = process.ev.PORT  || 3000;
+
+async function main() {
+  // TODO: register middlewares (CORS...)
+  
+  // TODO: use router
+
+  // TODO: default express error handling middleware
+
+  server.listen(PORT, () => console.log(`listening for requests on port ${PORT}`));
+}
+
+main();
+' >> server.js
+
+# create entry point for app-level wrapping ESM library to use ES6 modules
+
+echo "require = require("esm")(module);
+module.exports = require("./server.js");
+" >> index.js
 
 # create a Dockerfiles
 
@@ -40,9 +63,13 @@ touch Dockerfile Dockerfile.test
 
 echo "node_modules" >> .gitignore && cp .gitignore .dockerignore
 
-# install express, cors, basic auth and helmet
+# install production dependencies
 
-npm i express cors express-basic-auth helmet eslint
+npm i express cors express-basic-auth helmet eslint esm
+
+# install development dependencies
+
+npm i -D supertest mocha
 
 # generate basic eslint config
 

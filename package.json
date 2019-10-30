@@ -4,7 +4,15 @@
   "description": "Packt course on RESTful Web API Design with Node.js 12",
   "main": "server.js",
   "scripts": {
-    "test": "npm test"
+    "start": "node -r esm .",
+    "debug": "DEBUG=* node -r esm .",
+    "dev": "node -r esm ./node_modules/nodemon/bin/nodemon.js .",
+    "test": "mocha ./test/*"
+  },
+  "mocha": {
+    "require": [
+      "esm"
+    ]
   },
   "repository": {
     "type": "git",
@@ -30,6 +38,10 @@
     "helmet": "^3.21.2"
   },
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "eslint": "^6.5.1",
+    "jest": "^24.9.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "supertest": "^4.0.2"
   }
 }
