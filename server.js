@@ -4,6 +4,7 @@ import registerMiddlewares from "./middlewares";
 
 async function main() {
   registerMiddlewares(server);
+  server.get("/", (req, res) => res.redirect("/v1"));
   server.use("/v1", rootRouter);
 
   server.listen();

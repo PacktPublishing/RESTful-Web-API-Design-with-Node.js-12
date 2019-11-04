@@ -4,10 +4,14 @@
   "description": "Packt course on RESTful Web API Design with Node.js 12",
   "main": "server.js",
   "scripts": {
-    "start": "node -r esm .",
+    "start8": "node -r esm .",
+    "start": "pm2-runtime start ecosystem.config.js --env production",
     "debug": "DEBUG=* node -r esm .",
     "dev": "node -r esm ./node_modules/nodemon/bin/nodemon.js .",
-    "test": "mocha ./test/*"
+    "test": "mocha ./test/*",
+    "docker:build": "sudo docker build . -t",
+    "heroku:push": "sudo heroku container:push",
+    "heroku:release": "sudo heroku container:release"
   },
   "mocha": {
     "require": [
