@@ -9,9 +9,6 @@ COPY ./package*.json ./
 # dependency installation for CI environments
 RUN npm ci --production
 
-# install PM2 production process manager (multi-threading)
-RUN npm install pm2 -g
-
 # copy the project folder inside container
 COPY ./ ./
 
@@ -20,4 +17,4 @@ COPY ./ ./
 # USER myuser
 
 # set primary command for server startup when container starts
-CMD npm start --port $PORT
+CMD PORT=$PORT npm start

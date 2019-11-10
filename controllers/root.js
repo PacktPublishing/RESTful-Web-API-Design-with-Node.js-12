@@ -8,19 +8,19 @@ const getRequestData = req => ({
   message: `Handling ${req.method} request`
 });
 
-const getRoot = (req, res, next) => {
+const getRoot = async (req, res, next) => {
   res.json(getRequestData(req));
 };
 
-const postRoot = (req, res, next) => {
+const postRoot = async (req, res, next) => {
   res.json(getRequestData(req));
 };
 
-const putRoot = (req, res, next) => {
+const putRoot = async (req, res, next) => {
   res.json(getRequestData(req));
 };
 
-const deleteRoot = (req, res, next) => {
+const deleteRoot = async (req, res, next) => {
   res.status(501).json(getRequestData(req));
 };
 

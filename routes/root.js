@@ -1,17 +1,18 @@
 import { Router } from "express";
 import { rootControllers } from "../controllers";
+import { AsyncWrapper } from "../utils";
 const rootRouter = Router();
 
 // GET /v1/
-rootRouter.get("/", rootControllers.getRoot);
+rootRouter.get("/", AsyncWrapper(rootControllers.getRoot));
 
 // POST /v1/
-rootRouter.post("/", rootControllers.postRoot);
+rootRouter.post("/", AsyncWrapper(rootControllers.postRoot));
 
 // PUT /v1/
-rootRouter.put("/", rootControllers.putRoot);
+rootRouter.put("/", AsyncWrapper(rootControllers.putRoot));
 
 // DELETE /v1/
-rootRouter.delete("/", rootControllers.deleteRoot);
+rootRouter.delete("/", AsyncWrapper(rootControllers.deleteRoot));
 
 export { rootRouter };
