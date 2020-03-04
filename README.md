@@ -36,7 +36,7 @@ https://github.com/PacktPublishing/RESTful-Web-API-Design-with-Node.js-12-contac
 <LI>Build your API Docker image and publish on Docker Hub
 <LI>Build multi-container Docker stacks using Docker compose
 <LI>Use the AWS Cloud services offering
-<LI> </LI></UL></DIV>
+ </LI></UL></DIV>
 
 ## Instructions and Navigation
 ### Assumed Knowledge
